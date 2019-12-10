@@ -1,0 +1,51 @@
+{
+  "name": "hf-sidebar",
+  "version": "0.1.4",
+  "main": "dist/index.js",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "transpile": "babel src/Sidebar.js --out-file dist/index.js",
+    "copy-css": "babel src/css --out-dir dist/css --copy-files",
+    "copy-img": "babel src/img --out-dir dist/img --copy-files",
+    "prepublishOnly": "npm run transpile & npm run copy-css & npm run copy-img"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsiaofung/hf-sidebar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hsiaofung/hf-sidebar/issues"
+  },
+  "homepage": "https://github.com/hsiaofung/hf-sidebar#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6"
+  }
+}
