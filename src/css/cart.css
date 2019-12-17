@@ -1,0 +1,110 @@
+/*reset*/
+p {
+  margin: 0;
+}
+body {
+  font-family: "Lato", 微軟雅黑體, "Microsoft JhengHei", 微軟正黑體, Arial,
+    sans-serif;
+}
+/*空購物車樣式*/
+.empty-cart .row-icon {
+  text-align: center;
+}
+.empty-cart .row1 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.empty-cart .row2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.empty-cart .row-button {
+  width: 100%;
+  text-align: center;
+}
+.empty-cart .row-button button {
+  font-family: inherit;
+  font-size: 16px;
+  min-width: 12.5rem;
+  background: black;
+  color: white;
+  padding: 1.25rem;
+  cursor: pointer;
+  letter-spacing: 0.2em;
+}
+.empty-cart .icon {
+  font-size: 6rem;
+}
+.empty-cart .group-empty {
+  padding: 2.5rem 0;
+}
+.icon-block {
+  margin-right: 0.5rem;
+}
+/*空購物車樣式--結束*/
+/*購物車小計*/
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 0.5rem;
+}
+/*購物車小計的價格*/
+.cart-subtotal-price {
+  color: #c69967;
+}
+/*購物車checkout btn*/
+.checkout-btn {
+  font-family: inherit;
+  width: 100%;
+  padding: 1.25rem;
+  background: #111;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.2em;
+  font-size: 1rem;
+  line-height: 1.15;
+}
+/*購物車商品移除按鈕*/
+.cartItem-remove-btn {
+  background: url("../img/close.png") no-repeat;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  opacity: 0.85;
+  background-size: contain;
+}
+/*購物車table style*/
+.cart-table td {
+  padding: 0.9375rem 0.625rem;
+  vertical-align: top;
+}
+/*購物車商品圖片*/
+.cart-table .cartItem-img {
+  width: 35.71429%;
+}
+.cart-table .cartItem-text p {
+  margin-bottom: 0.25em;
+}
+/*購物車商品名稱*/
+.cart-table .cartItem-text .cartItem-text-title {
+  font-weight: 700;
+}
+/*購物車移除td欄位*/
+.cartItem-remove {
+  text-align: right;
+}
+.cart-table .cartItem-text-price {
+  color: #c69967;
+  font-weight: 700;
+}
