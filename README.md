@@ -1,11 +1,11 @@
 ## install
 
-yarn add hf-sidebar
+yarn add hf-cart
 
 ## component
 
 ```javascript
-<Sidebar>
+<Cart>
 ```
 
 ## feature
