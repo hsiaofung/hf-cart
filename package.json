@@ -1,5 +1,5 @@
 {
-  "name": "hf-sidebar",
+  "name": "hf-cart",
   "version": "0.1.4",
   "main": "dist/index.js",
   "dependencies": {
@@ -13,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "transpile": "babel src/Sidebar.js --out-file dist/index.js",
+    "transpile": "babel src/Cart.js --out-file dist/index.js",
     "copy-css": "babel src/css --out-dir dist/css --copy-files",
     "copy-img": "babel src/img --out-dir dist/img --copy-files",
     "prepublishOnly": "npm run transpile & npm run copy-css & npm run copy-img"
@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hsiaofung/hf-sidebar.git"
+    "url": "git+https://github.com/hsiaofung/hf-cart.git"
   },
   "bugs": {
-    "url": "https://github.com/hsiaofung/hf-sidebar/issues"
+    "url": "https://github.com/hsiaofung/hf-cart/issues"
   },
-  "homepage": "https://github.com/hsiaofung/hf-sidebar#readme",
+  "homepage": "https://github.com/hsiaofung/hf-cart#readme",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",

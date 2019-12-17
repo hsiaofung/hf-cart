@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Sidebar from "hf-sidebar";
 import "./css/cart.css";
 import "./css/style.css";
-import pdtImg from "../src/img/pdt.jpg";
 
 export default class Cart extends Component {
   state = {
