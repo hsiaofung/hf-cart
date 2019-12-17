@@ -40,6 +40,15 @@ export default class Cart extends Component {
       </div>
     );
   }
+
+  getComma(length, index) {
+    const isLastItem = (length, index) => {
+      return length - index === 1;
+    };
+    /*最後一個項目不需要逗點*/
+    if (isLastItem(length, index)) return " ";
+    return "，";
+  }
   get cartContent() {
     const { cartItems } = this.props;
 
@@ -57,7 +66,10 @@ export default class Cart extends Component {
                 <tr key={index}>
                   <td className="cartItem-img">
                     {/*商品圖片 */}
-                    <img src={item.imgUrl}></img>
+                    <img
+                      src={item.imgUrl}
+                      alt={`${item.collection}${item.name}`}
+                    ></img>
                   </td>
                   <td className="cartItem-text">
                     {/*商品title*/}
@@ -68,6 +80,8 @@ export default class Cart extends Component {
                       {item.options.map((text, index) => (
                         <span key={index}>
                           {text.name}：{text.value}
+                          {/*逗點*/}
+                          {this.getComma(item.options.length, index)}
                         </span>
                       ))}
                     </p>

@@ -6,6 +6,7 @@ body {
   font-family: "Lato", 微軟雅黑體, "Microsoft JhengHei", 微軟正黑體, Arial,
     sans-serif;
 }
+
 /*空購物車樣式*/
 .empty-cart .row-icon {
   text-align: center;
@@ -84,6 +85,9 @@ body {
   opacity: 0.85;
   background-size: contain;
 }
+.cartItem-remove-btn:hover {
+  opacity: 0.5;
+}
 /*購物車table style*/
 .cart-table td {
   padding: 0.9375rem 0.625rem;
@@ -106,5 +110,19 @@ body {
 }
 .cart-table .cartItem-text-price {
   color: #c69967;
-  font-weight: 700;
+  font-weight: bold;
+}
+/*RWD*/
+@media (max-width: 767px) {
+  .cart-content {
+    font-size: 13px;
+  }
+  .cart-table .cartItem-img img {
+    max-width: 140px;
+    width: 100%;
+  }
+  .cartItem-remove-btn {
+    width: 13px;
+    height: 13px;
+  }
 }
