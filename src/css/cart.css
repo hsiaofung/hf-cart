@@ -124,6 +124,7 @@ body {
 .cart-table td {
   padding: 0.9375rem 0.625rem;
   vertical-align: top;
+  text-align: left;
 }
 /*購物車商品圖片*/
 .cart-table .cartItem-img {
@@ -135,10 +136,6 @@ body {
 /*購物車商品名稱*/
 .cart-table .cartItem-text .cartItem-text-title {
   font-weight: 700;
-}
-/*購物車移除td欄位*/
-.cartItem-remove {
-  text-align: right;
 }
 .cart-table .cartItem-text-price {
   color: #c69967;

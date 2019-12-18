@@ -17,26 +17,17 @@ export default class Cart extends Component {
       moveIn: false
     });
   };
-  get title() {
-    return (
-      <>
-        <span className="icon-block icon icon-cart"></span>我的購物車
-      </>
-    );
-  }
   get emptyCart() {
-    const { whatsNew } = this.props;
+    const { cartIcon, whatsNew, emptyCart } = this.props;
     return (
       <div className="empty-cart">
         <div className="group-empty">
-          <p className="row-icon">
-            <span className="icon icon-cart"></span>
-          </p>
-          <p className="row1">一切還好嗎?</p>
-          <p className="row2">你的購物袋是空的。</p>
+          <p className="row-icon">{cartIcon}</p>
+          <p className="row1">{emptyCart.row1}</p>
+          <p className="row2">{emptyCart.row2}</p>
         </div>
         <div className="row-button">
-          <button onClick={whatsNew}>了解最新商品</button>
+          <button onClick={whatsNew}>{emptyCart.buttonText}</button>
         </div>
       </div>
     );
@@ -56,7 +47,8 @@ export default class Cart extends Component {
       removeCartItem,
       totalPrice,
       totalName,
-      checkout
+      checkout,
+      checkoutBtnText
     } = this.props;
 
     return (
@@ -65,10 +57,9 @@ export default class Cart extends Component {
           <span className="cart-subtotal-name">{totalName}</span>
           <span className="cart-subtotal-price">{totalPrice}</span>
         </div>
-        <button
-          className="checkout-btn"
-          onClick={checkout}
-        >{`結帳${cartItems.length}件商品`}</button>
+        <button className="checkout-btn" onClick={checkout}>
+          {checkoutBtnText}
+        </button>
         <div className="cart-content-body">
           <table className="cart-table">
             <tbody>
@@ -114,11 +105,11 @@ export default class Cart extends Component {
     );
   }
   render() {
-    const { cartItems } = this.props;
+    const { cartIcon, cartTitle, cartItems } = this.props;
 
     return (
       <div className="cart">
-        <div
+        {/* <div
           style={{
             borderBottom: "1px solid grey",
             height: "80px",
@@ -126,16 +117,16 @@ export default class Cart extends Component {
             textAlign: "right",
             paddingRight: "20px"
           }}
-        >
+        > */}
           <button className="cart-btn" onClick={this.openSidebar}>
-            <span className="icon icon-cart"></span>
+            {cartIcon}
             <span className="cart-btn-number">{cartItems.length}</span>
           </button>
-        </div>
+        {/* </div> */}
         <Sidebar
           show={this.state.moveIn}
           close={this.closeSidebar}
-          title={this.title}
+          title={cartTitle}
         >
           {cartItems.length > 0 ? this.cartContent : this.emptyCart}
         </Sidebar>
@@ -145,10 +136,23 @@ export default class Cart extends Component {
 }
 
 Cart.defaultProps = {
+  cartTitle: (
+    <>
+      <span className="icon-block icon icon-cart"></span>
+      我的購物車
+    </>
+  ),
+  cartIcon: <span className="icon icon-cart"></span>,
   cartItems: [],
   totalName: "小計",
   totalPrice: "0",
+  checkoutBtnText: `結帳0件商品`,
   removeCartItem: () => console.log("/*Default removeCartItem func. empty*/"),
   checkout: () => console.log("/*Default checkout function empty*/"),
-  whatsNew: () => console.log("/*Default whatsNew func. empty!*/")
+  whatsNew: () => console.log("/*Default whatsNew func. empty!*/"),
+  emptyCart: {
+    row1: "一切還好嗎?",
+    row2: "你的購物袋是空的。",
+    buttonText: "了解最新商品"
+  }
 };

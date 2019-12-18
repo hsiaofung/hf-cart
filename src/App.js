@@ -28,6 +28,11 @@ const cartItems = [
   }
 ];
 const total = { name: "小計", price: "$9,100.00" };
+const emptyCart = {
+  row1: "Nothing!",
+  row2: "Is everything OK?",
+  buttonText: "What's New"
+};
 
 class App extends React.Component {
   removeCartItem = cartItem => {
@@ -41,17 +46,31 @@ class App extends React.Component {
     console.log("/*Action what's New Here!*/");
     window.location = `/whatsNew`;
   };
+  get checkoutBtnText() {
+    return `結帳${cartItems.length}件商品`;
+  }
   render() {
     return (
       <div className="App">
-        <Cart
-          cartItems={cartItems}
-          totalName={total.name}
-          totalPrice={total.price}
-          removeCartItem={this.removeCartItem}
-          checkout={this.checkout}
-          whatsNew={this.whatsNew}
-        />
+        <div
+          style={{
+            borderBottom: "1px solid grey",
+            height: "80px",
+            lineHeight: "80px",
+            textAlign: "left",
+            paddingRight: "20px"
+          }}
+        >
+          <Cart
+            cartItems={cartItems}
+            totalName={total.name}
+            totalPrice={total.price}
+            removeCartItem={this.removeCartItem}
+            checkout={this.checkout}
+            whatsNew={this.whatsNew}
+            checkoutBtnText={this.checkoutBtnText}
+          />
+        </div>
       </div>
     );
   }
