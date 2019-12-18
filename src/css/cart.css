@@ -2,9 +2,41 @@
 p {
   margin: 0;
 }
+button {
+  background: none;
+}
 body {
   font-family: "Lato", 微軟雅黑體, "Microsoft JhengHei", 微軟正黑體, Arial,
     sans-serif;
+}
+/*購物車按鈕*/
+.cart-btn {
+  position: relative;
+}
+/*購物車按鈕中的cart icon*/
+.cart-btn .icon-cart {
+  font-size: 1.5rem;
+}
+/*購物車按鈕中的cart icon : hover*/
+.cart-btn .icon-cart:hover {
+  cursor: pointer;
+  opacity: 0.75;
+  color: #005db3;
+}
+/*購物車按鈕右上方的數量*/
+.cart-btn .cart-btn-number {
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  background-color: #dadada;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 9px;
+  line-height: 20px;
+  color: black;
+  text-align: center;
+  z-index: -1;
 }
 
 /*空購物車樣式*/

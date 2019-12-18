@@ -11,7 +11,8 @@ const cartItems = [
       { name: "數量", value: "1" },
       { name: "材質", value: "18K" },
       { name: "紅色黃金，長度", value: "45厘米" }
-    ]
+    ],
+    price: "HK$1,400.00"
   },
   {
     imgUrl:
@@ -22,14 +23,35 @@ const cartItems = [
       { name: "數量", value: "1" },
       { name: "材質", value: "18K" },
       { name: "紅色黃金，長度", value: "45厘米" }
-    ]
+    ],
+    price: "HK$1,500.00"
   }
 ];
+const total = { name: "小計", price: "$9,100.00" };
+
 class App extends React.Component {
+  removeCartItem = cartItem => {
+    console.log("/*Action remove cart item Here!*/", cartItem);
+  };
+  checkout = () => {
+    console.log("/*Action checkout Here!*/");
+    window.location = `/checkout`;
+  };
+  whatsNew = () => {
+    console.log("/*Action what's New Here!*/");
+    window.location = `/whatsNew`;
+  };
   render() {
     return (
       <div className="App">
-        <Cart cartItems={cartItems} />
+        <Cart
+          cartItems={cartItems}
+          totalName={total.name}
+          totalPrice={total.price}
+          removeCartItem={this.removeCartItem}
+          checkout={this.checkout}
+          whatsNew={this.whatsNew}
+        />
       </div>
     );
   }

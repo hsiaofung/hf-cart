@@ -25,6 +25,7 @@ export default class Cart extends Component {
     );
   }
   get emptyCart() {
+    const { whatsNew } = this.props;
     return (
       <div className="empty-cart">
         <div className="group-empty">
@@ -35,7 +36,7 @@ export default class Cart extends Component {
           <p className="row2">你的購物袋是空的。</p>
         </div>
         <div className="row-button">
-          <button>了解最新商品</button>
+          <button onClick={whatsNew}>了解最新商品</button>
         </div>
       </div>
     );
@@ -50,15 +51,24 @@ export default class Cart extends Component {
     return "，";
   }
   get cartContent() {
-    const { cartItems } = this.props;
+    const {
+      cartItems,
+      removeCartItem,
+      totalPrice,
+      totalName,
+      checkout
+    } = this.props;
 
     return (
       <div className="cart-content">
         <div className="cart-subtotal">
-          <span className="cart-subtotal-name">小計</span>
-          <span className="cart-subtotal-price">$1,400.00</span>
+          <span className="cart-subtotal-name">{totalName}</span>
+          <span className="cart-subtotal-price">{totalPrice}</span>
         </div>
-        <button className="checkout-btn">{`結帳${cartItems.length}件商品`}</button>
+        <button
+          className="checkout-btn"
+          onClick={checkout}
+        >{`結帳${cartItems.length}件商品`}</button>
         <div className="cart-content-body">
           <table className="cart-table">
             <tbody>
@@ -86,11 +96,14 @@ export default class Cart extends Component {
                       ))}
                     </p>
                     {/*商品價格*/}
-                    <p className="cartItem-text-price">HK$1,400.00</p>
+                    <p className="cartItem-text-price">{item.price}</p>
                   </td>
                   {/*移除按鈕*/}
                   <td className="cartItem-remove">
-                    <button className="cartItem-remove-btn"></button>
+                    <button
+                      className="cartItem-remove-btn"
+                      onClick={() => removeCartItem(item)}
+                    ></button>
                   </td>
                 </tr>
               ))}
@@ -105,8 +118,19 @@ export default class Cart extends Component {
 
     return (
       <div className="cart">
-        <div style={{ borderBottom: "1px solid grey" }}>
-          <button onClick={this.openSidebar}>open right</button>
+        <div
+          style={{
+            borderBottom: "1px solid grey",
+            height: "80px",
+            lineHeight: "80px",
+            textAlign: "right",
+            paddingRight: "20px"
+          }}
+        >
+          <button className="cart-btn" onClick={this.openSidebar}>
+            <span className="icon icon-cart"></span>
+            <span className="cart-btn-number">{cartItems.length}</span>
+          </button>
         </div>
         <Sidebar
           show={this.state.moveIn}
@@ -121,5 +145,10 @@ export default class Cart extends Component {
 }
 
 Cart.defaultProps = {
-  cartItems: []
+  cartItems: [],
+  totalName: "小計",
+  totalPrice: "0",
+  removeCartItem: () => console.log("/*Default removeCartItem func. empty*/"),
+  checkout: () => console.log("/*Default checkout function empty*/"),
+  whatsNew: () => console.log("/*Default whatsNew func. empty!*/")
 };
