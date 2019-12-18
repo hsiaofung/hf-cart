@@ -1,6 +1,6 @@
 {
   "name": "hf-cart",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/index.js",
   "dependencies": {
     "hf-sidebar": "^0.1.5",
@@ -16,6 +16,7 @@
     "transpile": "babel src/Cart.js --out-file dist/index.js",
     "copy-css": "babel src/css --out-dir dist/css --copy-files",
     "copy-img": "babel src/img --out-dir dist/img --copy-files",
+    "copy-fonts": "babel src/fonts --out-dir dist/fonts --copy-files",
     "prepublishOnly": "npm run transpile & npm run copy-css & npm run copy-img"
   },
   "eslintConfig": {
