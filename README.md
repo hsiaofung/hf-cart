@@ -40,16 +40,16 @@ yarn add hf-cart
 
 ## CSS
 
-.cart-btn : 購物車按鈕
-.cart-btn .icon-cart: 購物車按鈕中的 icon
-.cart-btn .cart-btn-number: 購物車按鈕右上方的數量
-.empty-cart: 空購物車
-.cart-content: 購物車的內容
-.cart-subtotal: 購物車小計
-.cart-subtotal-price: 購物車小計的價格
-.checkout-btn: 購物車 checkout btn
-.cartItem-remove-btn : 購物車商品移除按鈕
-.cart-table : 購物車 table
+- .cart-btn : 購物車按鈕
+- .cart-btn .icon-cart: 購物車按鈕中的 icon
+- .cart-btn .cart-btn-number: 購物車按鈕右上方的數量
+- .empty-cart: 空購物車
+- .cart-content: 購物車的內容
+- .cart-subtotal: 購物車小計
+- .cart-subtotal-price: 購物車小計的價格
+- .checkout-btn: 購物車 checkout btn
+- .cartItem-remove-btn : 購物車商品移除按鈕
+- .cart-table : 購物車 table
 
 ## Demo
 
